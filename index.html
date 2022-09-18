@@ -6,23 +6,31 @@
     <body>
         <script>
  
-             function solution(arr) {
-               let answer, min=arr[0];
-               for (let i = 1; i < arr.length; i++) {
-                if (arr[i]< min) min=arr[i];
-               }
-               answer = min;
-               return answer;
+          function solution(array, day) {
+            let answer;
+   
+            
+            //끝자리수 비교하고 똑같은 것만 필터링해서 
+            // 배열에 담으면 되는거니까
+            let numberArray = [];
+            for (let value of array) {
+                numberArray.push(value % 10)
+             }
 
+            // 일의 자리 수만 필터링하는 for
+
+            let result =  numberArray.filter((item, index)=> item == day ).length;
  
-            }
-                 
- 
- 
-  
-             let array = [10,11,2362,23,5,3,999999]
+           
+
+            return answer = `오늘 10부제 위반한 총 차량 대수는 ${result}대 입니다`;
+
+
+          }
+          let day = 3;
+          let car = [23, 43, 37, 55, 32, 78, 89]
              
-        console.log(solution(array));
+        console.log(solution(car, day));
          </script>
     </body>
 </html>
