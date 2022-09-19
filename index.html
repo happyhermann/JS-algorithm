@@ -5,30 +5,25 @@
     </head>
     <body>
         <script>
-          const solution = (arr) => {
-            let answer = arr;
-            // 얉은 복사
-            // 객체를 직접대입에서 참조에 의한 할당이 이루어짐 
-            // 둘은 같은 데이터 주소를 가지고 있음 
-            let sum = arr.reduce((a,b) => a+b, 0) 
-
- 
-            for (let i = 0; i < 8; i++) {
-              for (let j = i; j < 9; j++) {
-                if ((sum-(arr[i]+arr[j]))=== 100) {
-                   arr.splice(j, 1);
-                   arr.splice(i, 1);
-                  // 배열 내에 특정 인덱스 값 제거하는 splice
-                }
-               }
+          const solution = (str, input) => {
+            let answer = 0;
+            // 카운터 
+            
+            for (let i of str ){
+              if (i === input) {
+                answer++;
+              }
              }
 
-            return answer;
+       
+ 
+             return answer;
 
           }
-          let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13]
-
-          console.log(solution(arr));
+ 
+            let str = "COMPUTERPROGRAMMING"
+            let input = "R"
+          console.log(solution(str, input));
         
          </script>
     </body>
