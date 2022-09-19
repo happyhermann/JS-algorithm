@@ -5,32 +5,31 @@
     </head>
     <body>
         <script>
+          const solution = (arr) => {
+            let answer = arr;
+            // 얉은 복사
+            // 객체를 직접대입에서 참조에 의한 할당이 이루어짐 
+            // 둘은 같은 데이터 주소를 가지고 있음 
+            let sum = arr.reduce((a,b) => a+b, 0) 
+
  
-          function solution(array, day) {
-            let answer;
-   
-            
-            //끝자리수 비교하고 똑같은 것만 필터링해서 
-            // 배열에 담으면 되는거니까
-            let numberArray = [];
-            for (let value of array) {
-                numberArray.push(value % 10)
+            for (let i = 0; i < 8; i++) {
+              for (let j = i; j < 9; j++) {
+                if ((sum-(arr[i]+arr[j]))=== 100) {
+                   arr.splice(j, 1);
+                   arr.splice(i, 1);
+                  // 배열 내에 특정 인덱스 값 제거하는 splice
+                }
+               }
              }
 
-            // 일의 자리 수만 필터링하는 for
-
-            let result =  numberArray.filter((item, index)=> item == day ).length;
- 
-           
-
-            return answer = `오늘 10부제 위반한 총 차량 대수는 ${result}대 입니다`;
-
+            return answer;
 
           }
-          let day = 3;
-          let car = [23, 43, 37, 55, 32, 78, 89]
-             
-        console.log(solution(car, day));
+          let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13]
+
+          console.log(solution(arr));
+        
          </script>
     </body>
 </html>
