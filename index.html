@@ -5,25 +5,28 @@
     </head>
     <body>
         <script>
-          const solution = (str, input) => {
-            let answer = 0;
-            // 카운터 
-            
-            for (let i of str ){
-              if (i === input) {
-                answer++;
+          const solution = (s) => {
+            let answer, max=Number.MIN_SAFE_INTEGER;
+  
+            for (let x of s) {
+              if(x.length> max) {
+                max = x.length
+                // 처음엔 무조건 참이니 max는 가장 작은 값으로 세팅됨 
+                // x.length는 max 세팅보다 작은 것에서부터 커질테니까 결국엔 가장 큰 수자로 반환됨
+                answer=x;
               }
-             }
+            }
+             
 
-       
- 
              return answer;
 
           }
  
-            let str = "COMPUTERPROGRAMMING"
-            let input = "R"
-          console.log(solution(str, input));
+            let num = 5
+            let str = ["teacher", "time", "student", "beautiful", "good"]
+
+ 
+           console.log(solution(str));
         
          </script>
     </body>
