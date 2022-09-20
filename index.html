@@ -5,28 +5,23 @@
     </head>
     <body>
         <script>
-          const solution = (s) => {
-            let answer, max=Number.MIN_SAFE_INTEGER;
-  
-            for (let x of s) {
-              if(x.length> max) {
-                max = x.length
-                // 처음엔 무조건 참이니 max는 가장 작은 값으로 세팅됨 
-                // x.length는 max 세팅보다 작은 것에서부터 커질테니까 결국엔 가장 큰 수자로 반환됨
-                answer=x;
-              }
-            }
-             
+        function solution(s) {
+        let answer; 
+        let mid = Math.floor(s.length / 2);
 
-             return answer;
+        if(s.length % 2 == 1) {
+            answer = s.substring(mid, mid+1);
+            // substring (1, 2)의 뜻은 1번 인덱스에서 2번 인덱스 전까지라는 뜻이다.
+        } else {
+            answer = s.substring(mid-1, mid+1);
+        }
+          
 
-          }
- 
-            let num = 5
-            let str = ["teacher", "time", "student", "beautiful", "good"]
 
- 
-           console.log(solution(str));
+        return answer;
+
+      }
+      console.log(solution("studye"))
         
          </script>
     </body>
