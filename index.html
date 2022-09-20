@@ -6,22 +6,21 @@
     <body>
         <script>
         function solution(s) {
-        let answer; 
-        let mid = Math.floor(s.length / 2);
+            let answer = 0;
+            let pos = s.indexOf('k');
+            while(pos!==-1) {
+                answer++;
+                pos=s.indexOf('k', pos+1);
+                // 반복이 시작되기 전에 조건문은 참,거짓을 판단받게 된다. 만약 조건문이 참이라면, while문 안의 문장들이 실행된다. 거짓이라면, 문장은 그냥 while 반복문 후로 넘어간다.
+ 
+            }
 
-        if(s.length % 2 == 1) {
-            answer = s.substring(mid, mid+1);
-            // substring (1, 2)의 뜻은 1번 인덱스에서 2번 인덱스 전까지라는 뜻이다.
-        } else {
-            answer = s.substring(mid-1, mid+1);
-        }
-          
-
-
-        return answer;
+            
+ 
+            return answer;
 
       }
-      console.log(solution("studye"))
+      console.log(solution("ksekkset"))
         
          </script>
     </body>
